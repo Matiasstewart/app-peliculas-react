@@ -15,7 +15,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert'; */
 
-const CardMovie = ({ movie }) => {
+const CardMovie = ({ movie, handleLike }) => {
 
     return (
         <Card sx={{ width: 300, height: 500 }}>
@@ -35,8 +35,8 @@ const CardMovie = ({ movie }) => {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon color={movie.isLiked ? "error" : "disabled"} />
+                <IconButton aria-label="add to favorites" onClick={()=>handleLike(movie)}>
+                    <FavoriteIcon color={movie.isLiked ? "error" : "disabled"}/>
                 </IconButton>
             </CardActions>
         </Card>
