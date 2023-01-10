@@ -23,6 +23,14 @@
       "img": "https://www.cronista.com/files/image/488/488121/636e67d2c55ba.jpg",
       "createdAt": "29 de noviembre de 2001",
       "isLiked": false
+    },
+    {
+      "name": "Gran Torino",
+      "description": "Walt Kowalski es un veterano de guerra duro e inflexible apasionado por su auto, un Gran Torino del 72. La llegada de unos inmigrantes asiáticos al barrio ablanda su carácter, pero unos pandilleros generan problemas y Walt se ve envuelto en ellos.",
+      "img": "https://media.revistagq.com/photos/614d84c22efa7ebc613dcca6/master/pass/grantorino_trailer.jpg",
+      "createdAt": "5 de marzo de 2009",
+      "isLiked": false,
+      "id": 4
     }
   ]
 }

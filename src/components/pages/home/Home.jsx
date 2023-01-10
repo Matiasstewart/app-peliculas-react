@@ -6,26 +6,35 @@ import styles from "./home.module.css"
 import Header from '../../common/header/Header'
 
 import confetti from 'canvas-confetti'
+import { Button } from '@mui/material'
+import CreateMovieModal from '../../common/createMovieModal/CreateMovieModal'
 
 const Home = () => {
 
     const [movies, setMovies] = useState([])
     const [dispatchLike, setDispatchLike] = useState(false)
     const [favorite, setFavorite] = useState(false)
+    const [open, setOpen] = useState(false);
+    const [isMovieCreate , setIsMovieCreate] = useState(false)
+    const [isMovieDelete , setIsMovieDelete] = useState(false)
 
-    useEffect(()=>{
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    useEffect(() => {
 
         axios.get("http://localhost:3090/movies")
             .then(res => setMovies(res.data))
             .catch(err => console.log(err))
 
         setDispatchLike(false)
+        setIsMovieCreate(false)
 
-    },[dispatchLike])
+    }, [dispatchLike, isMovieCreate, isMovieDelete])
 
-    const handleLike = (movie)=>{
+    const handleLike = (movie) => {
 
-        if( !movie.isLiked ){
+        if (!movie.isLiked) {
             confetti({
                 zIndex: 999,
                 particleCount: 100,
@@ -53,23 +62,31 @@ const Home = () => {
             .catch(err => console.log(err))
     }
 
-    const moviesFiltered = movies.filter( movie => movie.isLiked)
+    const moviesFiltered = movies.filter(movie => movie.isLiked)
+
+    const deleteMovieById = (id)=>{
+        axios.delete(`http://localhost:3090/movies/${id}`)
+            .then(res => setIsMovieDelete(true))
+            .catch(err => console.log(err))
+    }
 
     return (
         <>
             <Header setFavorite={setFavorite} />
+            <Button onClick={handleOpen}>Agregar pelicula</Button>
+            <CreateMovieModal open={open} handleClose={handleClose} setIsMovieCreate={setIsMovieCreate}/>
             <div className={styles.containerCards}>
                 {
                     !favorite ? (
-                        movies.map((e)=>{
+                        movies.map((e) => {
                             return (
-                                <CardMovie movie={e} key={e.id} handleLike={handleLike}/>
+                                <CardMovie movie={e} key={e.id} handleLike={handleLike} deleteMovieById={deleteMovieById} />
                             )
                         })
                     ) : (
-                        moviesFiltered.map((e)=>{
+                        moviesFiltered.map((e) => {
                             return (
-                                <CardMovie movie={e} key={e.id} handleLike={handleLike}/>
+                                <CardMovie movie={e} key={e.id} handleLike={handleLike} deleteMovieById={deleteMovieById}/>
                             )
                         })
                     )
