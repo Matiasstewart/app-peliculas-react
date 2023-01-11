@@ -70,10 +70,14 @@ const Home = () => {
             .catch(err => console.log(err))
     }
 
+    const styleButtonModal = {
+        bgcolor : "#333",
+    }
+
     return (
-        <>
+        <div style={{backgroundColor : "black"}}>
             <Header setFavorite={setFavorite} />
-            <Button onClick={handleOpen}>Agregar pelicula</Button>
+            <Button onClick={handleOpen} sx={styleButtonModal} variant="contained">Agregar pelicula</Button>
             <CreateMovieModal open={open} handleClose={handleClose} setIsMovieCreate={setIsMovieCreate}/>
             <div className={styles.containerCards}>
                 {
@@ -92,7 +96,7 @@ const Home = () => {
                     )
                 }
             </div>
-        </>
+        </div>
     )
 }
 

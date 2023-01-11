@@ -23,6 +23,11 @@ const CardMovie = ({ movie, handleLike, deleteMovieById }) => {
             <CardHeader
                 title={movie.name}
                 subheader={movie.createdAt}
+                action={
+                    <IconButton aria-label="add to favorites" onClick={() => handleLike(movie)}>
+                        <FavoriteIcon color={movie.isLiked ? "error" : "disabled"} />
+                    </IconButton>
+                }
             />
             <CardMedia
                 component="img"
@@ -30,16 +35,13 @@ const CardMovie = ({ movie, handleLike, deleteMovieById }) => {
                 image={movie.img}
                 alt="Paella dish"
             />
-            <CardContent sx={{height: 150 }}>
+            <CardContent sx={{ height: 150 }}>
                 <Typography variant="body2" color="text.secondary">
                     {movie.description}
                 </Typography>
             </CardContent>
-            <CardActions sx={{display: "flex", justifyContent: "space-between"}}>
-                <IconButton aria-label="add to favorites" onClick={()=>handleLike(movie)}>
-                    <FavoriteIcon color={movie.isLiked ? "error" : "disabled"}/>
-                </IconButton>
-                <Button type='button' variant='contained' color='error' onClick={()=>deleteMovieById(movie.id)}>Eliminar</Button>
+            <CardActions sx={{ display: "flex", justifyContent: "space-between" }}>
+                <Button type='button' variant='contained' color='error' onClick={() => deleteMovieById(movie.id)}>Eliminar</Button>
             </CardActions>
         </Card>
     )

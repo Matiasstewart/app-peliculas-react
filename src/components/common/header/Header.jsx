@@ -12,7 +12,7 @@ const Header = ( {setFavorite} ) => {
             alignItems: "center"
         }}>
 
-            <Typography variant='h4' color="primary">Peliculas</Typography>
+            <Typography variant='h4' color="primary">Pelipedia</Typography>
             <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
                 <Button variant="contained" color="primary" onClick={()=>setFavorite(false)}>Todos</Button>
                 <Button variant="contained" color="primary" onClick={()=>setFavorite(true)}>Favoritos</Button>
