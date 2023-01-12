@@ -15,11 +15,12 @@ import { Button } from '@mui/material';
 /* import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert'; */
+//import styles from "./cardMovie.module.css"
 
 const CardMovie = ({ movie, handleLike, deleteMovieById }) => {
 
     return (
-        <Card sx={{ width: 300, height: 500 }}>
+        <Card sx={{ width: 300, height: 500, bgcolor: "#fff", boxShadow: "0px 0px 50px 7px rgba(46,46,46,1)" }} >
             <CardHeader
                 title={movie.name}
                 subheader={movie.createdAt}

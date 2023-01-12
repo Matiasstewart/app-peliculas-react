@@ -8,6 +8,7 @@ import Header from '../../common/header/Header'
 import confetti from 'canvas-confetti'
 import { Button } from '@mui/material'
 import CreateMovieModal from '../../common/createMovieModal/CreateMovieModal'
+import Footer from '../../common/footer/Footer'
 
 const Home = () => {
 
@@ -72,10 +73,11 @@ const Home = () => {
 
     const styleButtonModal = {
         bgcolor : "#333",
+        spacind : 4,
     }
 
     return (
-        <div style={{backgroundColor : "black"}}>
+        <div className={styles.homeContainer}>
             <Header setFavorite={setFavorite} />
             <Button onClick={handleOpen} sx={styleButtonModal} variant="contained">Agregar pelicula</Button>
             <CreateMovieModal open={open} handleClose={handleClose} setIsMovieCreate={setIsMovieCreate}/>
@@ -96,6 +98,7 @@ const Home = () => {
                     )
                 }
             </div>
+            <Footer />
         </div>
     )
 }

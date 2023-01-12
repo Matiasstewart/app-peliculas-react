@@ -1,5 +1,5 @@
 .containerCards{
-    background-color: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://d500.epimg.net/cincodias/imagenes/2020/12/31/lifestyle/1609408585_467254_1609408795_noticia_normal.jpg");
     display: flex;
     min-height: 100vh;
     justify-content: center;
@@ -7,4 +7,8 @@
     gap: 30px;
     padding: 20px;
     flex-wrap: wrap;
+}
+
+.homeContainer {
+    background-color: black;
 }
