@@ -79,7 +79,9 @@ const Home = () => {
     return (
         <div className={styles.homeContainer}>
             <Header setFavorite={setFavorite} />
-            <Button onClick={handleOpen} sx={styleButtonModal} variant="contained">Agregar pelicula</Button>
+            <div className={styles.buttonContainer}>
+            <Button onClick={handleOpen} sx={styleButtonModal} style={{display: "block"}} variant="contained">Agregar pelicula</Button>
+            </div>
             <CreateMovieModal open={open} handleClose={handleClose} setIsMovieCreate={setIsMovieCreate}/>
             <div className={styles.containerCards}>
                 {

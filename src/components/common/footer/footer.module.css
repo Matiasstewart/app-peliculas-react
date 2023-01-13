@@ -1,0 +1,53 @@
+.footer{
+    display: flex;
+    background-color: rgb(85, 1, 1);
+    height: 7vh;
+    align-items: center;
+}
+
+.iconContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+.githubIconContainer {
+    display: inline-flex;
+}
+
+.githubIconContainer > a {
+    color: wheat;
+}
+
+.githubIconContainer > a > ion-icon {
+    font-size: 50px;
+}
+
+.facebookIconContainer {
+    display: inline-flex;
+}
+
+.facebookIconContainer > a {
+    color: wheat ;
+}
+
+.facebookIconContainer > a > ion-icon{
+    font-size: 50px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.twitterIconContainer {
+    display: inline-flex;
+}
+
+.twitterIconContainer > a {
+    color: wheat;
+    text-decoration: none;
+}
+
+.twitterIconContainer > a > ion-icon{
+    font-size: 50px;
+}

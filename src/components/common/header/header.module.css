@@ -1,8 +1,25 @@
 .container{
-    background-color: black;
+    background-color: #101010;
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 10px;
     align-items: center;
+}
+
+.logoContainer {
+    display: flex;
+}
+
+.filmLogoContainer > ion-icon{
+    padding-right: 10px;
+    color: wheat;
+    font-size: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-family: Tahoma;
+    color: rgb(85, 1, 1);
+    vertical-align: middle;
 }

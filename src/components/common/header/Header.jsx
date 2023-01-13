@@ -1,16 +1,21 @@
-import { Typography, Button } from '@mui/material'
+import { Button } from '@mui/material'
 import React from 'react'
 import styles from "./header.module.css"
 
-const Header = ( {setFavorite} ) => {
+const Header = ({ setFavorite }) => {
     return (
         <div className={styles.container}>
-            <Typography variant='h4' color="primary">Pelipedia</Typography>
+            <div className={styles.logoContainer}>
+                <div className={styles.filmLogoContainer}>
+                    <ion-icon name="videocam-outline"></ion-icon>
+                </div>
+                <h4 className={styles.title}>Pelipedia</h4>
+            </div>
             <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
-                <Button variant="contained" color="primary" onClick={()=>setFavorite(false)}>Todos</Button>
-                <Button variant="contained" color="primary" onClick={()=>setFavorite(true)}>Favoritos</Button>
+                <Button variant="contained" color="primary" onClick={() => setFavorite(false)}>Todos</Button>
+                <Button variant="contained" color="primary" onClick={() => setFavorite(true)}>Favoritos</Button>
             </div >
-    </div >
+        </div >
     )
 }
 
