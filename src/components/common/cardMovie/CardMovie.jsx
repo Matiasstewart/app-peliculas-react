@@ -15,7 +15,7 @@ import { Button } from '@mui/material';
 /* import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert'; */
-//import styles from "./cardMovie.module.css"
+import styles from "./cardMovie.module.css"
 
 const CardMovie = ({ movie, handleLike, deleteMovieById }) => {
 
@@ -42,7 +42,10 @@ const CardMovie = ({ movie, handleLike, deleteMovieById }) => {
                 </Typography>
             </CardContent>
             <CardActions sx={{ display: "flex", justifyContent: "space-between" }}>
+                <div className={styles.btnContainer}>
+                    {/* <button className={styles.deleteBtn}>Eliminar</button> */}
                 <Button type='button' variant='contained' color='error' onClick={() => deleteMovieById(movie.id)}>Eliminar</Button>
+                </div>
             </CardActions>
         </Card>
     )
